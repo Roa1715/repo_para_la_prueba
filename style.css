@@ -1,12 +1,32 @@
+/* 1. PALETA DE COLORES (Cámbiala según el tema de tu prueba) */
 :root {
-  --color-acento: #0d6efd;
+  --color-principal: #0d6efd;
+  --color-oscuro: #212529;
   --sombra-hover: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
+/* 2. NAVEGACIÓN SUAVE */
 html {
   scroll-behavior: smooth;
 }
 
+/* 3. BANNER PRINCIPAL CON IMAGEN Y CAPA OSCURA */
+.hero-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200");
+  background-size: cover;
+  background-position: center;
+  min-height: 320px;
+}
+
+/* 4. IMÁGENES UNIFORMES EN TARJETAS (Evita que se deformen o descuadren) */
+.img-tarjeta {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* 5. EFECTO HOVER PARA CUALQUIER ARTICLE O CARD */
 .tarjeta-animada {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
