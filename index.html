@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Plantilla semántica en HTML5 maquetada con Tailwind CSS y CSS personalizado.">
-  <title>Plantilla Semántica con Tailwind CSS</title>
+  <meta name="description" content="Plantilla web semántica construida 100% con HTML5 y Tailwind CSS sin archivos CSS externos.">
+  <title>Plantilla Semántica 100% Tailwind CSS</title>
 
-  <!-- Tailwind CSS (Play CDN) -->
+  <!-- Tailwind CSS (Play CDN) — Sin archivo CSS externo -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -26,16 +26,16 @@
       },
     };
   </script>
-
-  <!-- CSS personalizado complementario -->
-  <link rel="stylesheet" href="style.css">
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased">
 
-  <!-- ENCABEZADO SEMÁNTICO -->
+  <!-- ENCABEZADO SEMÁNTICO FIJO -->
   <header class="sticky top-0 z-40 bg-brand-900/95 backdrop-blur border-b border-slate-800 text-white shadow-sm">
     <div class="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between gap-4">
-      <a href="#inicio" class="flex items-center gap-2.5 font-bold text-lg tracking-tight hover:text-brand-100 transition-colors">
+      <a
+        href="#inicio"
+        class="flex items-center gap-2.5 font-bold text-lg tracking-tight hover:text-brand-100 transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900"
+      >
         <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500 text-sm font-extrabold text-white">
           TW
         </span>
@@ -44,10 +44,10 @@
 
       <!-- Navegación escritorio -->
       <nav aria-label="Navegación principal" class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-200">
-        <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
-        <a href="#catalogo" class="hover:text-white transition-colors">Catálogo</a>
-        <a href="#arquitectura" class="hover:text-white transition-colors">Arquitectura</a>
-        <a href="#contacto" class="px-3.5 py-1.5 rounded-lg bg-brand-500 text-white hover:bg-brand-600 transition-colors">
+        <a href="#inicio" class="hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Inicio</a>
+        <a href="#catalogo" class="hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Catálogo</a>
+        <a href="#arquitectura" class="hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Arquitectura</a>
+        <a href="#contacto" class="px-3.5 py-1.5 rounded-lg bg-brand-500 text-white hover:bg-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
           Contacto
         </a>
       </nav>
@@ -56,7 +56,7 @@
       <button
         id="menu-btn"
         type="button"
-        class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-slate-200 hover:bg-slate-800 hover:text-white transition-colors"
+        class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-slate-200 hover:bg-slate-800 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
         aria-label="Abrir menú de navegación"
         aria-expanded="false"
         aria-controls="menu-movil"
@@ -70,31 +70,45 @@
     <!-- Navegación móvil -->
     <nav id="menu-movil" aria-label="Navegación móvil" class="hidden md:hidden border-t border-slate-800 bg-brand-900 px-4 py-3">
       <ul class="flex flex-col gap-2 text-sm font-medium text-slate-200">
-        <li><a href="#inicio" class="block rounded-md px-3 py-2 hover:bg-slate-800 hover:text-white">Inicio</a></li>
-        <li><a href="#catalogo" class="block rounded-md px-3 py-2 hover:bg-slate-800 hover:text-white">Catálogo</a></li>
-        <li><a href="#arquitectura" class="block rounded-md px-3 py-2 hover:bg-slate-800 hover:text-white">Arquitectura</a></li>
-        <li><a href="#contacto" class="block rounded-md px-3 py-2 bg-brand-500/20 text-brand-100 hover:bg-brand-500 hover:text-white">Contacto</a></li>
+        <li><a href="#inicio" class="block rounded-md px-3 py-2 hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Inicio</a></li>
+        <li><a href="#catalogo" class="block rounded-md px-3 py-2 hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Catálogo</a></li>
+        <li><a href="#arquitectura" class="block rounded-md px-3 py-2 hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Arquitectura</a></li>
+        <li><a href="#contacto" class="block rounded-md px-3 py-2 bg-brand-500/20 text-brand-100 hover:bg-brand-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- SECCIÓN HERO / PORTADA -->
-  <section id="inicio" class="hero-banner text-white">
-    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20 flex flex-col justify-center">
+  <!-- SECCIÓN HERO / PORTADA (100% Tailwind con imagen + capa oscura para contraste) -->
+  <section id="inicio" class="relative overflow-hidden bg-brand-900 text-white min-h-[340px] flex items-center scroll-mt-20">
+    <img
+      src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&auto=format&fit=crop&q=80"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 h-full w-full object-cover"
+    >
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/75 via-slate-900/80 to-slate-900/90" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-6xl w-full mx-auto px-4 py-16 md:py-20 flex flex-col justify-center">
       <span class="inline-flex w-fit items-center gap-2 rounded-full bg-brand-500/20 border border-brand-500/40 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-100 mb-4">
-        HTML5 Semántico · Tailwind CSS · Responsive
+        HTML5 Semántico · 100% Tailwind CSS · Sin archivo CSS
       </span>
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight max-w-2xl leading-tight">
-        Maquetación Web Semántica con Tailwind CSS
+        Maquetación Web Semántica 100% con Tailwind CSS
       </h1>
       <p class="mt-4 max-w-2xl text-base sm:text-lg text-slate-200 leading-relaxed">
-        Plantilla práctica diseñada con etiquetas semánticas, grilla responsive de 12 columnas en Tailwind CSS y estilos complementarios en <code class="px-1.5 py-0.5 rounded bg-white/10 text-sm">style.css</code>.
+        Plantilla práctica construida únicamente con etiquetas semánticas de HTML5 y clases utilitarias de Tailwind CSS, sin hojas de estilos CSS externas.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="#catalogo" class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 transition-colors">
+        <a
+          href="#catalogo"
+          class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900"
+        >
           Explorar catálogo
         </a>
-        <a href="#arquitectura" class="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/20 transition-colors">
+        <a
+          href="#arquitectura"
+          class="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900"
+        >
           Ver arquitectura semántica
         </a>
       </div>
@@ -109,14 +123,14 @@
       <div class="lg:col-span-8 space-y-12">
 
         <!-- SECCIÓN 1: CATÁLOGO DE ARTÍCULOS -->
-        <section id="catalogo" aria-labelledby="titulo-catalogo">
+        <section id="catalogo" aria-labelledby="titulo-catalogo" class="scroll-mt-20">
           <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3 mb-6">
             <div>
               <h2 id="titulo-catalogo" class="text-xl font-bold text-slate-900">
                 Artículos Destacados
               </h2>
               <p class="text-sm text-slate-500">
-                Cada tarjeta utiliza la etiqueta independiente <code>&lt;article&gt;</code> dentro de un mismo <code>&lt;section&gt;</code>.
+                Cada tarjeta utiliza la etiqueta independiente <code class="px-1 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-xs">&lt;article&gt;</code> dentro de un mismo <code class="px-1 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-xs">&lt;section&gt;</code>.
               </p>
             </div>
             <span class="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700 ring-1 ring-inset ring-brand-100">
@@ -126,12 +140,12 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Artículo 1 -->
-            <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col h-full tarjeta-animada">
+            <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col h-full transition duration-200 ease-out hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
               <img
                 src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&auto=format&fit=crop&q=80"
                 alt="Código HTML5 estructurado en un editor de texto"
                 loading="lazy"
-                class="img-tarjeta"
+                class="h-52 w-full object-cover"
               >
               <div class="p-5 flex flex-col flex-1">
                 <span class="w-fit rounded-md bg-brand-50 px-2.5 py-0.5 text-xs font-semibold text-brand-700 mb-2">
@@ -141,21 +155,24 @@
                   Estructura Clara y Accesible
                 </h3>
                 <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                  El uso de <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> y <code>&lt;aside&gt;</code> mejora la accesibilidad y facilita el mantenimiento.
+                  El uso de <code class="font-mono text-xs bg-slate-100 px-1 rounded">&lt;header&gt;</code>, <code class="font-mono text-xs bg-slate-100 px-1 rounded">&lt;main&gt;</code>, <code class="font-mono text-xs bg-slate-100 px-1 rounded">&lt;section&gt;</code>, <code class="font-mono text-xs bg-slate-100 px-1 rounded">&lt;article&gt;</code> y <code class="font-mono text-xs bg-slate-100 px-1 rounded">&lt;aside&gt;</code> mejora la accesibilidad y el mantenimiento.
                 </p>
-                <a href="#arquitectura" class="mt-auto inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors">
+                <a
+                  href="#arquitectura"
+                  class="mt-auto inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+                >
                   Ver estructura
                 </a>
               </div>
             </article>
 
             <!-- Artículo 2 -->
-            <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col h-full tarjeta-animada">
+            <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col h-full transition duration-200 ease-out hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
               <img
                 src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
                 alt="Diseño de interfaz responsive en pantalla de computador"
                 loading="lazy"
-                class="img-tarjeta"
+                class="h-52 w-full object-cover"
               >
               <div class="p-5 flex flex-col flex-1">
                 <span class="w-fit rounded-md bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 mb-2">
@@ -165,21 +182,24 @@
                   Grilla Responsive de 12 Columnas
                 </h3>
                 <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                  Con <code>grid-cols-1</code>, <code>md:grid-cols-2</code> y <code>lg:grid-cols-12</code>, el diseño se adapta automáticamente de móvil a escritorio sin escribir media queries manuales.
+                  Con <code class="font-mono text-xs bg-slate-100 px-1 rounded">grid-cols-1</code>, <code class="font-mono text-xs bg-slate-100 px-1 rounded">md:grid-cols-2</code> y <code class="font-mono text-xs bg-slate-100 px-1 rounded">lg:grid-cols-12</code>, el diseño se adapta de móvil a escritorio sin escribir CSS manual.
                 </p>
-                <a href="#arquitectura" class="mt-auto inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors">
+                <a
+                  href="#arquitectura"
+                  class="mt-auto inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+                >
                   Ver detalle
                 </a>
               </div>
             </article>
 
             <!-- Artículo 3 -->
-            <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col h-full tarjeta-animada">
+            <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col h-full transition duration-200 ease-out hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
               <img
                 src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80"
                 alt="Computador portátil mostrando entorno de desarrollo web"
                 loading="lazy"
-                class="img-tarjeta"
+                class="h-52 w-full object-cover"
               >
               <div class="p-5 flex flex-col flex-1">
                 <span class="w-fit rounded-md bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700 mb-2">
@@ -189,33 +209,39 @@
                   Utilidades y Flexbox
                 </h3>
                 <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                  Cada tarjeta usa <code>flex flex-col h-full</code> y <code>mt-auto</code> en el botón para alinear las acciones al mismo nivel aunque los textos tengan distinta longitud.
+                  Cada tarjeta usa <code class="font-mono text-xs bg-slate-100 px-1 rounded">flex flex-col h-full</code> y <code class="font-mono text-xs bg-slate-100 px-1 rounded">mt-auto</code> en el botón para alinear las acciones al mismo nivel sin importar el largo del texto.
                 </p>
-                <a href="#arquitectura" class="mt-auto inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors">
+                <a
+                  href="#arquitectura"
+                  class="mt-auto inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+                >
                   Ver detalle
                 </a>
               </div>
             </article>
 
             <!-- Artículo 4 -->
-            <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col h-full tarjeta-animada">
+            <article class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col h-full transition duration-200 ease-out hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
               <img
                 src="https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?w=800&auto=format&fit=crop&q=80"
-                alt="Estilos CSS personalizados para microinteracciones"
+                alt="Interfaz con animaciones y accesibilidad hechas en Tailwind"
                 loading="lazy"
-                class="img-tarjeta"
+                class="h-52 w-full object-cover"
               >
               <div class="p-5 flex flex-col flex-1">
                 <span class="w-fit rounded-md bg-violet-50 px-2.5 py-0.5 text-xs font-semibold text-violet-700 mb-2">
-                  CSS Complementario
+                  Cero CSS Externo
                 </span>
                 <h3 class="text-lg font-bold text-slate-900 mb-2">
-                  Estilos Propios y Microinteracciones
+                  Animaciones y Accesibilidad Nativas
                 </h3>
                 <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                  El archivo <code>style.css</code> complementa a Tailwind con variables en <code>:root</code>, desplazamiento suave, contraste en el banner, recorte uniforme y animación <code>:hover</code>.
+                  Todo se resuelve con utilidades de Tailwind: <code class="font-mono text-xs bg-slate-100 px-1 rounded">scroll-smooth</code>, <code class="font-mono text-xs bg-slate-100 px-1 rounded">object-cover</code>, <code class="font-mono text-xs bg-slate-100 px-1 rounded">hover:-translate-y-1</code>, <code class="font-mono text-xs bg-slate-100 px-1 rounded">focus-visible:ring-2</code> y <code class="font-mono text-xs bg-slate-100 px-1 rounded">motion-reduce:</code>.
                 </p>
-                <a href="#contacto" class="mt-auto inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors">
+                <a
+                  href="#contacto"
+                  class="mt-auto inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+                >
                   Ir al cierre
                 </a>
               </div>
@@ -224,37 +250,37 @@
         </section>
 
         <!-- SECCIÓN 2: ARQUITECTURA SEMÁNTICA VISUAL -->
-        <section id="arquitectura" aria-labelledby="titulo-arquitectura" class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+        <section id="arquitectura" aria-labelledby="titulo-arquitectura" class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm scroll-mt-20">
           <h2 id="titulo-arquitectura" class="text-xl font-bold text-slate-900 mb-2">
             Arquitectura Semántica de esta Página
           </h2>
           <p class="text-sm text-slate-600 mb-6">
-            Resumen rápido de cómo se combinan las etiquetas HTML5 con las utilidades de Tailwind CSS en este proyecto:
+            Resumen rápido de cómo se combinan las etiquetas HTML5 con utilidades puras de Tailwind CSS sin usar ningún archivo <code class="font-mono text-xs bg-slate-100 px-1 rounded">.css</code>:
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
               <h3 class="text-sm font-bold text-brand-700 font-mono">&lt;header&gt; + &lt;nav&gt;</h3>
               <p class="mt-1 text-sm text-slate-600">
-                Barra fija superior con <code>sticky top-0</code>, Flexbox horizontal en escritorio y menú desplegable en móvil.
+                Barra fija superior con <code class="font-mono text-xs">sticky top-0</code>, Flexbox horizontal en escritorio y menú desplegable en móvil.
               </p>
             </div>
             <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
               <h3 class="text-sm font-bold text-brand-700 font-mono">&lt;main&gt; + &lt;section&gt;</h3>
               <p class="mt-1 text-sm text-slate-600">
-                Cuerpo único dividido en bloques temáticos usando grilla responsive <code>lg:grid-cols-12</code>.
+                Cuerpo único dividido en bloques temáticos con <code class="font-mono text-xs">scroll-mt-20</code> y grilla responsive <code class="font-mono text-xs">lg:grid-cols-12</code>.
               </p>
             </div>
             <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
               <h3 class="text-sm font-bold text-brand-700 font-mono">&lt;article&gt;</h3>
               <p class="mt-1 text-sm text-slate-600">
-                Unidades autónomas reutilizables para cada tarjeta del catálogo con imagen uniforme (<code>object-fit: cover</code>).
+                Tarjetas reutilizables con imagen uniforme (<code class="font-mono text-xs">h-52 w-full object-cover</code>) y efecto elevación (<code class="font-mono text-xs">hover:-translate-y-1</code>).
               </p>
             </div>
             <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
               <h3 class="text-sm font-bold text-brand-700 font-mono">&lt;aside&gt; + &lt;footer&gt;</h3>
               <p class="mt-1 text-sm text-slate-600">
-                Barra lateral complementaria (<code>lg:col-span-4</code>) y cierre institucional alineado al final con <code>mt-auto</code>.
+                Barra lateral complementaria (<code class="font-mono text-xs">lg:col-span-4</code>) y pie de página fijo al fondo con <code class="font-mono text-xs">mt-auto</code>.
               </p>
             </div>
           </div>
@@ -271,7 +297,7 @@
             Información Extra (&lt;aside&gt;)
           </h2>
           <p class="text-sm text-slate-600 leading-relaxed mb-4">
-            Este panel usa <code class="px-1 py-0.5 rounded bg-slate-100 text-slate-800">&lt;aside&gt;</code> porque aporta contexto complementario sin competir con el contenido principal.
+            Este panel usa <code class="px-1 py-0.5 rounded bg-slate-100 text-slate-800 font-mono text-xs">&lt;aside&gt;</code> porque aporta contexto complementario sin competir con el contenido principal.
           </p>
           <ul class="divide-y divide-slate-100 text-sm">
             <li class="py-2.5 flex items-center justify-between">
@@ -283,8 +309,8 @@
               <span class="rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-semibold text-brand-700">Play CDN</span>
             </li>
             <li class="py-2.5 flex items-center justify-between">
-              <span class="font-medium text-slate-700">CSS Complementario</span>
-              <span class="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">style.css</span>
+              <span class="font-medium text-slate-700">CSS Externo</span>
+              <span class="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">0 archivos</span>
             </li>
           </ul>
         </div>
@@ -296,20 +322,20 @@
           </h2>
           <ul class="space-y-1.5 text-sm">
             <li>
-              <a href="#catalogo" class="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition-colors">
+              <a href="#catalogo" class="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
                 <span>Categoría A · Semántica</span>
                 <span class="text-xs text-slate-400">→</span>
               </a>
             </li>
             <li>
-              <a href="#catalogo" class="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition-colors">
+              <a href="#catalogo" class="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
                 <span>Categoría B · Grillas Tailwind</span>
                 <span class="text-xs text-slate-400">→</span>
               </a>
             </li>
             <li>
-              <a href="#arquitectura" class="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition-colors">
-                <span>Categoría C · Estilos y Accesibilidad</span>
+              <a href="#arquitectura" class="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+                <span>Categoría C · Utilidades y Accesibilidad</span>
                 <span class="text-xs text-slate-400">→</span>
               </a>
             </li>
@@ -322,7 +348,7 @@
             Tip para la sustentación
           </h2>
           <p class="text-sm text-brand-700 leading-relaxed">
-            Recuerda revisar <strong>BITACORA.md</strong> y <strong>README.md</strong>: ahí está documentado qué clase de Tailwind reemplazó a cada clase de Bootstrap 5 y cómo justificar cada decisión técnica.
+            Revisa <strong>README.md</strong>: incluye la explicación detallada de <strong>cada etiqueta HTML5</strong> y de <strong>cada clase de Tailwind CSS</strong> usada en esta página, sin necesidad de ningún archivo CSS.
           </p>
         </div>
 
@@ -332,21 +358,21 @@
   </main>
 
   <!-- PIE DE PÁGINA -->
-  <footer id="contacto" class="bg-brand-900 text-slate-300 mt-auto border-t border-slate-800">
+  <footer id="contacto" class="bg-brand-900 text-slate-300 mt-auto border-t border-slate-800 scroll-mt-20">
     <div class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
         <h2 class="text-white font-bold text-base mb-2">Mi Proyecto · Tailwind CSS</h2>
         <p class="text-sm text-slate-400 leading-relaxed">
-          Plantilla educativa migrada de Bootstrap 5 a Tailwind CSS manteniendo HTML5 semántico, diseño responsive y accesibilidad.
+          Plantilla educativa maquetada 100% con HTML5 semántico y Tailwind CSS, sin hojas de estilos CSS externas.
         </p>
       </div>
 
       <div>
         <h2 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Navegación</h2>
         <ul class="space-y-2 text-sm">
-          <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
-          <li><a href="#catalogo" class="hover:text-white transition-colors">Catálogo de artículos</a></li>
-          <li><a href="#arquitectura" class="hover:text-white transition-colors">Arquitectura semántica</a></li>
+          <li><a href="#inicio" class="hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Inicio</a></li>
+          <li><a href="#catalogo" class="hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Catálogo de artículos</a></li>
+          <li><a href="#arquitectura" class="hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Arquitectura semántica</a></li>
         </ul>
       </div>
 
@@ -355,18 +381,18 @@
         <div class="flex flex-wrap gap-2 text-xs">
           <span class="rounded-md bg-slate-800 px-2.5 py-1 text-slate-200">HTML5</span>
           <span class="rounded-md bg-slate-800 px-2.5 py-1 text-slate-200">Tailwind CSS</span>
-          <span class="rounded-md bg-slate-800 px-2.5 py-1 text-slate-200">CSS3</span>
+          <span class="rounded-md bg-slate-800 px-2.5 py-1 text-slate-200">Sin CSS externo</span>
           <span class="rounded-md bg-slate-800 px-2.5 py-1 text-slate-200">Responsive</span>
         </div>
       </div>
     </div>
 
     <div class="border-t border-slate-800 py-4 text-center text-xs text-slate-400 px-4">
-      Maquetado con HTML5 Semántico y Tailwind CSS · Documentado en BITACORA.md
+      Maquetado 100% con HTML5 Semántico y Tailwind CSS · Explicación completa en README.md
     </div>
   </footer>
 
-  <!-- Script mínimo para el menú responsive en móvil -->
+  <!-- Script mínimo para abrir/cerrar el menú en móvil -->
   <script>
     const menuBtn = document.getElementById('menu-btn');
     const menuMovil = document.getElementById('menu-movil');

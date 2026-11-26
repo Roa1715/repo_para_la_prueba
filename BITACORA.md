@@ -14,6 +14,7 @@ Registro detallado fase por fase de la migración y construcción de **`repo_par
 | **Paso 4** | Barra lateral informativa (`<aside>`) y sección visual de arquitectura semántica | ✅ Completado |
 | **Paso 5** | Pie de página completo (`<footer>`), pulido de `style.css` y revisión de accesibilidad | ✅ Completado |
 | **Paso 6** | Actualización completa de `README.md` a Tailwind CSS y cierre de bitácora | ✅ Completado |
+| **Paso 7** | Refactorización a **100% Tailwind CSS sin archivo CSS externo** (eliminación de `style.css`) y guía completa en `README.md` | ✅ Completado |
 
 ---
 
@@ -117,3 +118,21 @@ Registro detallado fase por fase de la migración y construcción de **`repo_par
 #### Resumen de la migración
 - **Antes:** Bootstrap 5 CDN + `styles.css` roto + 2 tarjetas simples sin imágenes ni menú móvil.
 - **Después:** Tailwind CSS (Play CDN) + `style.css` corregido y accesible + menú responsive + Hero Banner + 4 tarjetas con imágenes uniformes + sección de arquitectura + `<aside>` enriquecido + `<footer>` de 3 columnas + `BITACORA.md` + `README.md` actualizado.
+
+---
+
+### Entrada #7 — Refactorización a 100% Tailwind CSS (sin archivo CSS externo) y guía exhaustiva en `README.md`
+- **Fecha:** 2026-11-26
+- **Archivos:** `index.html`, `README.md`, `BITACORA.md` (y eliminación de `style.css`)
+
+#### ¿Qué se hizo?
+1. **Eliminación total de `style.css`:** todas las reglas personalizadas se tradujeron a utilidades nativas de Tailwind CSS dentro de `index.html`:
+   - `scroll-smooth` en `<html>` y `scroll-mt-20` en secciones/footer con `id`.
+   - Hero banner con `<img>` absoluta (`absolute inset-0 h-full w-full object-cover`) + capa degradada (`bg-gradient-to-b from-slate-900/75 via-slate-900/80 to-slate-900/90`).
+   - Imágenes de tarjetas con `h-52 w-full object-cover`.
+   - Animación hover con `transition duration-200 ease-out hover:-translate-y-1 hover:shadow-lg` + `motion-reduce:transition-none motion-reduce:hover:translate-y-0`.
+   - Foco accesible por teclado con `focus-visible:outline-none focus-visible:ring-2`.
+2. **Documentación exhaustiva en `README.md`:** se agregó la explicación detallada de uso de cada etiqueta HTML5 y de cada grupo de clases de Tailwind CSS utilizadas en `index.html`, junto con la tabla comparativa de cómo se reemplazó cada regla de `style.css`.
+
+#### Cómo explicarlo en la sustentación
+> *"Simplifiqué la arquitectura eliminando el archivo `style.css` para trabajar 100% con utilidades nativas de Tailwind CSS, incluyendo scroll suave, contraste en la portada, recorte de imágenes, animaciones hover y accesibilidad, y dejé documentado el uso exacto de cada etiqueta y clase en `README.md`."*
