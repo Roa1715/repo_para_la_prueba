@@ -1,6 +1,6 @@
 /* ==========================================================================
    CSS Personalizado Complementario a Tailwind CSS
-   Solo mantiene utilidades y estilos específicos que complementan al CDN.
+   Centraliza variables, scroll suave, portada con contraste y microinteracciones.
    ========================================================================== */
 
 /* 1. VARIABLES CSS GLOBALES (centralizan paleta y sombras reutilizables) */
@@ -10,27 +10,40 @@
   --sombra-hover: 0 12px 24px -6px rgba(15, 23, 42, 0.14);
 }
 
-/* 2. NAVEGACIÓN SUAVE PARA ENLACES ANCLA (#seccion) */
+/* 2. NAVEGACIÓN SUAVE Y MARGEN PARA ENCABEZADO FIJO (sticky header) */
 html {
   scroll-behavior: smooth;
 }
 
-/* 3. BANNER PRINCIPAL CON IMAGEN Y CAPA OSCURA PARA CONTRASTE */
+section[id],
+footer[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* 3. ACCESIBILIDAD: FOCO VISIBLE CON TECLADO */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-principal);
+  outline-offset: 2px;
+}
+
+/* 4. BANNER PRINCIPAL CON IMAGEN Y CAPA OSCURA PARA CONTRASTE */
 .hero-banner {
-  background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.78)),
+  background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.8)),
               url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200");
   background-size: cover;
   background-position: center;
+  min-height: 320px;
 }
 
-/* 4. IMÁGENES UNIFORMES EN TARJETAS (evita deformación y descuadres) */
+/* 5. IMÁGENES UNIFORMES EN TARJETAS (evita deformación y descuadres) */
 .img-tarjeta {
   height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
-/* 5. MICROINTERACCIÓN HOVER PARA TARJETAS (<article>) */
+/* 6. MICROINTERACCIÓN HOVER PARA TARJETAS (<article>) */
 .tarjeta-animada {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -38,4 +51,19 @@ html {
 .tarjeta-animada:hover {
   transform: translateY(-4px);
   box-shadow: var(--sombra-hover);
+}
+
+/* 7. RESPETO A PREFERENCIAS DE MOVIMIENTO REDUCIDO (ACCESIBILIDAD) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .tarjeta-animada {
+    transition: none;
+  }
+
+  .tarjeta-animada:hover {
+    transform: none;
+  }
 }
